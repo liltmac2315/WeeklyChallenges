@@ -1,43 +1,80 @@
-﻿using System;
+﻿  using System;
 using System.Collections.Generic;
 
 namespace ChallengesWithTestsMark8
 {
-    public class ChallengesSet02
+    public class 
+        
+        ChallengesSet02
     {
         public bool CharacterIsALetter(char c)
         {
-            throw new NotImplementedException();
+            return char.Isletter(c);
+
         }
 
         public bool CountOfElementsIsEven(string[] vals)
         {
-            throw new NotImplementedException();
+            if (vals.length % 2 == 0) 
+            {
+            return true;
+            }
+            return false;
         }
 
         public bool IsNumberEven(int number)
         {
-            throw new NotImplementedException();
+            if (vals.length % 2 == 0) 
+            {
+                return true;
+            }
+            else 
+            { 
+                return false
+            }
         }
 
         public bool IsNumberOdd(int num)
         {
-            throw new NotImplementedException();
+            if (vals.length % 2 != 0)
+            {
+                return true;
+            }
+            else 
+            {
+                return false;
+            }
         }
 
         public double SumOfMinAndMax(IEnumerable<double> numbers)
         {
-            throw new NotImplementedException();
-        }
-
+            if (numbers == null || numbers.Count == 0) 
+            { 
+                return 0; 
+            }
+                return numbers.Min() + numbers.Max();
+        
+        }  
+            
         public int GetLengthOfShortestString(string str1, string str2)
         {
-            throw new NotImplementedException();
+            if (str1.Length < str2.Length) 
+            { 
+                return str1.Length;
+            }
+            else 
+            { 
+                return str2.Length;
+            }
         }
 
         public int Sum(int[] numbers)
         {
-            throw new NotImplementedException();
+            if (numbers == null) 
+            {
+                return 0;
+            }
+            returns numbers.Sum();
         }
 
         public int SumEvens(int[] numbers)
