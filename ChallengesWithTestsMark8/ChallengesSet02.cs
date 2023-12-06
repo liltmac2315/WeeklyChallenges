@@ -1,5 +1,8 @@
 ﻿  using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
+using System.Globalization;
+using System.Linq;
 
 namespace ChallengesWithTestsMark8
 {
@@ -9,13 +12,13 @@ namespace ChallengesWithTestsMark8
     {
         public bool CharacterIsALetter(char c)
         {
-            return char.Isletter(c);
+            return char.IsLetter(c);
 
         }
 
         public bool CountOfElementsIsEven(string[] vals)
         {
-            if (vals.length % 2 == 0) 
+            if (vals.Length % 2 == 0) 
             {
             return true;
             }
@@ -24,19 +27,19 @@ namespace ChallengesWithTestsMark8
 
         public bool IsNumberEven(int number)
         {
-            if (vals.length % 2 == 0) 
+            if (number % 2 == 0) 
             {
                 return true;
             }
             else 
-            { 
-                return false
+            {
+                return false;
             }
         }
 
         public bool IsNumberOdd(int num)
         {
-            if (vals.length % 2 != 0)
+            if (num % 2 != 0)
             {
                 return true;
             }
@@ -48,7 +51,7 @@ namespace ChallengesWithTestsMark8
 
         public double SumOfMinAndMax(IEnumerable<double> numbers)
         {
-            if (numbers == null || numbers.Count == 0) 
+            if (numbers == null || numbers.Count() == 0) 
             { 
                 return 0; 
             }
@@ -74,22 +77,57 @@ namespace ChallengesWithTestsMark8
             {
                 return 0;
             }
-            returns numbers.Sum();
+
+            int sum = 0;
+
+            foreach (var num in numbers)
+            {
+                sum += num;  
+            }   
+                return sum;
         }
 
         public int SumEvens(int[] numbers)
         {
-            throw new NotImplementedException();
+            if (numbers == null) 
+            {
+                return 0;
+            }
+            var evenSum = 0;
+            
+            for (int i = 0; i < numbers.Length; i++) 
+            {
+                evenSum += numbers[i];
+            }
+                return evenSum;
+
+            //linq
+            //return numbers.Where(number => x % 2 == 0).Sum();
         }
+
 
         public bool IsSumOdd(List<int> numbers)
         {
-            throw new NotImplementedException();
+            if (numbers == null) 
+            {
+                return false;
+            }
+
+            return (numbers.Sum() % 2 != 0);
+                  
         }
 
         public long CountOfPositiveOddsBelowNumber(long number)
         {
-            throw new NotImplementedException();
+            if (number <= 0)
+            {
+                return 0;
+            }
+            else
+            {
+                return number / 2;
+            }
         }
+        
     }
 }
