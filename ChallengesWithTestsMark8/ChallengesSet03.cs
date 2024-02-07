@@ -9,12 +9,13 @@ namespace ChallengesWithTestsMark8
     {
         public bool ArrayContainsAFalse(bool[] vals)
         {
-            for (int i = 0 ;i < vals.Length; i++)
+            for (int i = 0; i < vals.Length; i++)
             {
                 if (vals[i] == false)
                 {
                     return true;
                 }
+
             }
 
             return false;
@@ -55,7 +56,7 @@ namespace ChallengesWithTestsMark8
 
             }
 
-            if (isLower == true && isUpper == true && isNumber == true)
+            if(isLower && isUpper && isNumber)
             {
                 return true;
             }
